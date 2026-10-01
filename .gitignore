@@ -1,0 +1,6 @@
+*.pem
+.env
+.env.local
+sightline-backend/.env
+node_modules/
+.next/
