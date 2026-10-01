@@ -1,4 +1,3 @@
-
 services:
   backend:
     build:
@@ -19,4 +18,3 @@ services:
       - NEXT_PUBLIC_WS_URL=ws://localhost:5000
     depends_on:
       - backend
-EOF
