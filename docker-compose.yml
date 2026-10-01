@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./sightline-backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./sightline-backend/.env
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    build:
+      context: ./sightline-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_WS_URL=ws://localhost:5000
+    depends_on:
+      - backend
